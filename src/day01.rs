@@ -8,8 +8,7 @@ fn solve_part_2() {
     let second_digit_re = Regex::new(r"^.*(\d{1}|one|two|three|four|five|six|seven|eight|nine|zero).*$").unwrap();
 
     let answer: i32 = contents
-        .trim()
-        .split('\n')
+        .lines()
         .map(|line| {
             let Some(first_digit_caps) = first_digit_re.captures(line) else { return 0 };
             let Some(second_digit_caps) = second_digit_re.captures(line) else { return 0 };
@@ -42,9 +41,6 @@ fn solve_part_2() {
                 num => num.parse::<i32>().unwrap(),
             };
 
-            println!("{line}, {first_digit}, {second_digit}");
-
-
             (10 * first_digit + second_digit) as i32
         })
         .sum();
@@ -57,8 +53,7 @@ fn solve_part_1() {
         .expect("Should read the file");
 
     let answer: i32 = contents
-        .trim()
-        .split('\n')
+        .lines()
         .map(|line| {
             let chars: Vec<char> = line.chars().collect();
             let mut start = 0;
