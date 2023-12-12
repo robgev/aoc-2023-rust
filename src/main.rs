@@ -8,7 +8,8 @@
 // mod day08;
 // mod day09;
 // mod day10;
-mod day11;
+// mod day11;
+mod day12;
 
 fn main() {
     // println!("Advent of Code 2023 Rust \n");
@@ -32,6 +33,8 @@ fn main() {
     // day09::solve();
     // println!("Day 10");
     // day10::solve();
-    println!("Day 11");
-    day11::solve();
+    // println!("Day 11");
+    // day11::solve();
+    println!("Day 12");
+    day12::solve();
 }
